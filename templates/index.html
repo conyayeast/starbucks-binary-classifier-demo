@@ -4,19 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Store Health Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        input[type="number"], input[type="text"], input[type="submit"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+        .result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Store Health Prediction</h1>
-    <form method="post">
-        Received Calls: <input type="number" name="received_calls" required><br>
-        Number of Errors: <input type="number" name="number_of_errors" required><br>
-        Customers Served: <input type="number" name="customers_served" required><br>
-        Average Spend per Customer: <input type="text" name="avg_spend" required><br>
-        Employee Satisfaction Rate (1-5): <input type="number" name="employee_satisfaction" required><br>
-        <input type="submit" value="Predict Health">
-    </form>
-    {% if result %}
-        <h2>Store is predicted to be: {{ result }}</h2>
-    {% endif %}
+    <div class="container">
+        <h1>Store Health Prediction</h1>
+        <form method="post">
+            Received Calls: <input type="number" name="received_calls" required><br>
+            Number of Errors: <input type="number" name="number_of_errors" required><br>
+            Customers Served: <input type="number" name="customers_served" required><br>
+            Average Spend per Customer: <input type="text" name="avg_spend" required><br>
+            Employee Satisfaction Rate (1-5): <input type="number" name="employee_satisfaction" required><br>
+            <input type="submit" value="Predict Health">
+        </form>
+        {% if result %}
+            <div class="result">Store is predicted to be: {{ result }}</div>
+        {% endif %}
+    </div>
 </body>
 </html>

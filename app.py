@@ -7,7 +7,7 @@ from sklearn.metrics import accuracy_score
 app = Flask(__name__)
 
 # Load your data
-df = pd.read_csv('path_to_your_csv/Starbucks_Synthetic_Store_Data.csv')
+df = pd.read_csv('/Users/connieyang/Documents/starbucks-binary-classifier-demo/Starbucks_Synthetic_Store_Data.csv')
 
 # Preprocess and split the data
 def preprocess_data(df):
